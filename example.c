@@ -1,19 +1,38 @@
 #include <stdio.h>
 
-void func(int x)
+// 두 정수를 더하는 함수
+int sumTwo(int a, int b)
 {
-    printf("func x = %d\n", x);
-    printf("func x is at %p\n", &x);
+    return a + b;
+}
+
+// 정수의 제곱을 계산하는 함수
+int square(int n)
+{
+    return n * n;
+}
+
+// 두 정수 중 큰 수를 구하는 함수
+int get_max(int x, int y)
+{
+    if (x > y)
+        return x;
+    else
+        return y;
 }
 
 int main(void)
 {
-    int x = 10;
+    int result;
 
-    printf("main x = %d\n", x);
-    printf("main x is at %p\n", &x);
+    result = sumTwo(10, 20);
+    printf("sumTwo = %d\n", result);
 
-    func(x);
+    result = square(5);
+    printf("square = %d\n", result);
+
+    result = get_max(10, 20);
+    printf("get_max = %d\n", result);
 
     return 0;
 }
